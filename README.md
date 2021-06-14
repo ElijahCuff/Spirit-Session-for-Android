@@ -5,6 +5,14 @@
 > Ditch the FAKES !       
 >  Android device's do have the ability to read very small changes in environment using the in-built hardware sensors, like the EMF Sensor, Image Sensor, Microphone, Accelerometer and even on some devices the Humidity and Barometric Pressure Sensors. 
 
+### Building   
+• Download the required Audio Dictionary file and add it to the src/res/raw folder alongside the phonetics and dictionary files.    
+https://drive.google.com/u/0/uc?id=1-6vFwROrzVx7lwtKJfoiQpFeCYoj0mdP&export=download
+    
+• Build as normal   
+ 
+#### Notes     
+• App has not had permission acceptance added yet, so permissions must be manually toggled in the system app settings      
    
 ### History
 This application was designed as an educational project toward afterlife communication apps and their legitimacy for claims on usability.
@@ -22,6 +30,7 @@ This application was designed as an educational project toward afterlife communi
 
 ### What's In the App ?   
 The app has, EMF + EVP + Random Phonics features.
+
  
 
 
