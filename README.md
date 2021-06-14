@@ -7,7 +7,7 @@
 • 400 Mb Internal Storage, 200mb Install File    
 • Android 7+, 10 recommended    
      
-https://drive.google.com/file/d/1-H2TKzSeljn609ZhwXIGeMZxOpM92yoI/view?usp=drivesdk
+https://drive.google.com/u/0/uc?id=1-H2TKzSeljn609ZhwXIGeMZxOpM92yoI&export=download
     
 > Demonstrates real EMF detector and othe means of spirit communication.
    
