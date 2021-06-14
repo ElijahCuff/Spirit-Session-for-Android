@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<RelativeLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+		<ImageView
+			android:src="@drawable/wall"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scaleType="centerCrop"/>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="#FFFFFF"
+				android:id="@+id/emfTop"
+				android:layout_marginTop="61dp"
+				android:layout_centerHorizontal="true"
+				android:layout_marginBottom="45dp"
+				android:textSize="52sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="@string/welcome"
+				android:id="@+id/textView"
+				android:textColor="#FFFFFF"
+				android:textStyle="bold"
+				android:layout_below="@id/emfTop"
+				android:padding="21dp"
+				android:layout_margin="10dp"/>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:layout_alignParentBottom="true"
+			android:id="@+id/contentmainRelativeLayout1"
+			android:layout_marginBottom="10dp"
+			android:layout_marginRight="10dp"
+			android:layout_marginLeft="10dp">
+
+			<ToggleButton
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/box"
+				android:enabled="false"
+				android:text="DICTION"
+				android:textOff="DICTION"
+				android:textOn="DICTION"/>
+
+			<ToggleButton
+				android:layout_width="wrap_content"
+				android:layout_height="100dp"
+				android:id="@+id/evp"
+				android:enabled="false"
+				android:layout_toRightOf="@id/box"
+				android:text="EVP RECORD"
+				android:textOff="EVP RECORD"
+				android:textOn="EVP RECORD"/>
+
+			<ToggleButton
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/beep"
+				android:layout_alignParentRight="true"
+				android:enabled="false"
+				android:text="EMF TRACK"
+				android:textOff="EMF TRACK"
+				android:textOn="EMF TRACK"/>
+
+			<ToggleButton
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_toLeftOf="@id/beep"
+				android:text="PHONETIC"
+				android:id="@+id/phonetic"
+				android:textOff="PHONETIC"
+				android:textOn="PHONETIC"/>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:layout_above="@id/contentmainRelativeLayout1"
+			android:id="@+id/contentmainRelativeLayout2"
+			android:layout_marginRight="10dp"
+			android:layout_marginLeft="10dp">
+
+			<ToggleButton
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/emf"
+				android:layout_centerHorizontal="true"
+				android:text="SESSION"
+				android:textOff="SESSION"
+				android:textOn="SESSION"/>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+</LinearLayout>
+
