@@ -12,8 +12,8 @@ https://drive.google.com/u/0/uc?id=1-6vFwROrzVx7lwtKJfoiQpFeCYoj0mdP&export=down
 • Build as normal   
  
 #### Notes     
-• App has not had permission acceptance added yet, so permissions must be manually toggled in the system app settings      
-   
+• App has basic permission acceptance
+
 ### History
 This application was designed as an educational project toward afterlife communication apps and their legitimacy for claims on usability.
    
