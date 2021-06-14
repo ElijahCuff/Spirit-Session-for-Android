@@ -1,22 +1,28 @@
 package wokeworld.ghost.communicator;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.media.ToneGenerator;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ActionMode;
@@ -62,6 +68,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.content_main);
         textView = findViewById(R.id.textView);
 				score = findViewById(R.id.emfTop);
+				
+				
+				String[] perms = {android.Manifest.permission.WRITE_EXTERNAL_STORAGE,android.Manifest.permission.RECORD_AUDIO};
+				checkSelfPerms(this,perms);
         addListenerOnButton();
         me = this;
     }
@@ -69,6 +79,9 @@ public class MainActivity extends AppCompatActivity
 
 		String fileLocation;
     private void startRecord() {
+				
+				
+				
         File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);  
         File folder = new File(dir.getAbsolutePath()+"/Spirit Session/");
 				if(!folder.exists()){folder.mkdirs();}
@@ -98,6 +111,68 @@ public class MainActivity extends AppCompatActivity
         catch (IllegalStateException e) {}  
 
     }
+		
+		
+		
+
+    // Auto Permission Checker
+    private static final int REQUEST = 112;
+    public void checkSelfPerms(Context ctx, String [] PERMISSIONS) {
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (!hasPermissions(ctx, PERMISSIONS)) {
+                ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, REQUEST);
+            } else {
+                //do here
+            }
+        } else {
+            //do here
+        }
+    }
+
+    private static boolean hasPermissions(Context context, String... permissions) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case REQUEST: {
+                    if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    } else {
+                        // todo for denied
+                        new AlertDialog.Builder(this)
+														.setCancelable(false)
+														.setTitle("Permission Denied")
+														.setMessage("Spirit Session needs permission for;\n• Recording the Microphone for EVP recordings\n• Write Storage for Saving Audio Files after recording.")
+														.setNeutralButton(" EXIT ", new DialogInterface.OnClickListener()
+														{
+																public void onClick (DialogInterface dialog, int which)
+																{
+																		finishAndRemoveTask();
+																}
+														})
+														.setIcon(R.mipmap.ic_launcher)
+														.show();
+												
+                    }
+                }
+        }
+    }
+
+		private void toast(String p0) {
+				Toast.makeText(MainActivity.this,p0,Toast.LENGTH_LONG).show();
+		}
+
+		
+		
 
 		boolean audioRecording = false;
 
