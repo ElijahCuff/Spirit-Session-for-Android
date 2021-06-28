@@ -8,7 +8,12 @@
 • Android 7+, 10 recommended    
      
 https://drive.google.com/u/0/uc?id=1-H2TKzSeljn609ZhwXIGeMZxOpM92yoI&export=download
-    
+       
+   
+SMALL VERSION DEMO : https://www.mediafire.com/download/cmw5065ol0t3dny
+   
+
+
 > Demonstrates real EMF detector and othe means of spirit communication.
    
 
